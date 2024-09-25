@@ -2,7 +2,8 @@
 #include <iostream>
 using namespace std;
 #include <string.h>
-#include<stdlib.h
+#include<stdlib.h>
+//#include "Classe/Event.h"
 //#include "Event.h"
 // Quelques conseils avant de commencer...
 // * N'oubliez pas de tracer (cout << ...) tous les constructeurs et le destructeur !!! Ca, c'est pas un conseil,
@@ -23,7 +24,7 @@ class Event
     char *title;
   public :
     Event();
-    Event(int c, cons char *t);
+    Event(int c, const char *t);
     Event(const Event &e);
     ~Event();
    
@@ -39,21 +40,21 @@ Event::Event()
 {
   cout << ">>> Event : constructeur par defaut <<<" << endl;
   code = 1;
-  title = nullptr
+  title = nullptr;
   setTitle("---");
 }
- Event(const Event &e)
- {
-  cout << ">>> Event : constructeur de copie <<<" << endl;
-  setcode (e.getcode());
-  title = nullptr
-  setTitle(e.getTitle());
- }
-Event::Event(int c, cons char *t) 
+Event::Event(const Event &e)
+{
+cout << ">>> Event : constructeur de copie <<<" << endl;
+setCode (e.getCode());
+title = nullptr;
+setTitle(e.getTitle());
+}
+Event::Event(int c, const char *t) 
 {
   cout << ">>> Event : constructeur d'initialisation <<<" << endl;
-  setcode (c);
-  title = nullptr
+  setCode (c);
+  title = nullptr;
   setTitle(t);
 }
 Event::~Event()
