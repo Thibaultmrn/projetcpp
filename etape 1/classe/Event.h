@@ -12,7 +12,7 @@ class Event
     char *title;
   public :
     Event();
-    Event(int c, cons char *t);
+    Event(int c, const char *t);
     Event(const Event &e);
     ~Event();
    

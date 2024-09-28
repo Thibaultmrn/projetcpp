@@ -84,7 +84,7 @@ const char * Event::getTitle() const
 }
 void Event::display() const
 {
-  count << "Event("<< code <<") : "<<title<<endl;
+  cout << "Event("<< code <<") : "<<title<<endl;
 }
 
 int main()

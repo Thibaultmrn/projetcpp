@@ -3,22 +3,21 @@ Event::Event()
 {
   cout << ">>> Event : constructeur par defaut <<<" << endl;
   code = 1;
-  title = nullptr
+  title = nullptr;
   setTitle("---");
 }
-
- Event(const Event &e)
- {
-  cout << ">>> Event : constructeur de copie <<<" << endl;
-  setcode (e.getcode());
-  title = nullptr
-  setTitle(e.getTitle());
- }
-Event::Event(int c, cons char *t) 
+Event::Event(const Event &e)
+{
+cout << ">>> Event : constructeur de copie <<<" << endl;
+setCode (e.getCode());
+title = nullptr;
+setTitle(e.getTitle());
+}
+Event::Event(int c, const char *t) 
 {
   cout << ">>> Event : constructeur d'initialisation <<<" << endl;
-  setcode (c);
-  title = nullptr
+  setCode (c);
+  title = nullptr;
   setTitle(t);
 }
 Event::~Event()
@@ -38,9 +37,6 @@ void Event::setTitle (const char *t)
   title = new char[strlen(t)+1];
   strcpy (title, t);
 }
-//
-//
-//
 int Event::getCode() const
 {
   return code;
@@ -49,10 +45,7 @@ const char * Event::getTitle() const
 {
   return title;
 }
-//
-//METHODE D'INSTANCE
-//
 void Event::display() const
 {
-  count << "Event("<< code <<") : "<<title<<endl;
+  cout << "Event("<< code <<") : "<<title<<endl;
 }
