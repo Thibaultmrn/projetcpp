@@ -1,17 +1,17 @@
 #include <stdlib.h>
 #include <iostream>
 using namespace std;
-#include "Time.h"
-#include "Timing.h"
-#include "Event.h"
+#include "classe/Time.h"
+#include "classe/Timing.h"
+#include "classe/Event.h"
 
-using namespace planning;
+//using namespace planning;
 
 int  Menu();
 void Essai1();
 void Essai2();
 void Essai3();
-void Essai4();
+//void Essai4();
 
 int main(int argc,char* argv[])
 {
@@ -27,7 +27,7 @@ int main(int argc,char* argv[])
       case 1 : Essai1(); break;
       case 2 : Essai2(); break;
       case 3 : Essai3(); break;
-      case 4 : Essai4(); break;
+      //case 4 : Essai4(); break;
       default : fini = true ; break;
     }
   }
@@ -106,6 +106,7 @@ void Essai1()
 /*******************************************************************************************************/
 /*** Tests de la classe Timing (Agregation par valeur avec un objet Time) ******************************/
 /*******************************************************************************************************/
+
 void Essai2()
 {
   cout << endl << "(1) ***** Test du constructeur par defaut de Timing ****************************" << endl;
@@ -165,6 +166,7 @@ void Essai2()
 /*******************************************************************************************************/
 /*** Tests de la classe Event (Agregation par reference d'un objet Timing) *****************************/
 /*******************************************************************************************************/
+
 void Essai3()
 {
   cout << endl << "(1) ***** Test constructeur par defaut + display *******************************" << endl;
@@ -219,10 +221,10 @@ void Essai3()
     cout << endl << endl;
   }
 }
-
 /*******************************************************************************************************/
 /*** Tests des variables statiques utiles **************************************************************/
 /*******************************************************************************************************/
+/*
 void Essai4()
 {
   cout << endl << "(1) ***** Tests de base des jours de la semaine ********************************" << endl;
@@ -268,4 +270,4 @@ void Essai4()
   cout << "e2.currentCode = " << e2.currentCode << endl;
   cout << "e3.currentCode = " << e3.currentCode << endl << endl;
 }
-
+*/

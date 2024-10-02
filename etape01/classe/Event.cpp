@@ -9,7 +9,7 @@ Event::Event()
 Event::Event(const Event &e)
 {
 cout << ">>> Event : constructeur de copie <<<" << endl;
-setCode (e.getCode());
+setCode(e.getCode());
 title = nullptr;
 setTitle(e.getTitle());
 }

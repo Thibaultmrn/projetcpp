@@ -3,7 +3,7 @@
 using namespace std;
 #include <string.h>
 #include<stdlib.h>
-//#include "Classe/Event.h"
+#include "classe/Event.h"
 //#include "Event.h"
 // Quelques conseils avant de commencer...
 // * N'oubliez pas de tracer (cout << ...) tous les constructeurs et le destructeur !!! Ca, c'est pas un conseil,
@@ -17,75 +17,6 @@ using namespace std;
 //   de la classe, le .cpp contenant la definition des methodes, et ensuite le makefile permettant de compiler
 //   le tout grace a la commande make 
 
-class Event
-{
-  private :
-    int code;
-    char *title;
-  public :
-    Event();
-    Event(int c, const char *t);
-    Event(const Event &e);
-    ~Event();
-   
-    void  setCode (int c);
-    void setTitle (const char *t);
-
-    int getCode() const;
-    const char *getTitle() const;
-
-    void display() const;
-};
-Event::Event()
-{
-  cout << ">>> Event : constructeur par defaut <<<" << endl;
-  code = 1;
-  title = nullptr;
-  setTitle("---");
-}
-Event::Event(const Event &e)
-{
-cout << ">>> Event : constructeur de copie <<<" << endl;
-setCode (e.getCode());
-title = nullptr;
-setTitle(e.getTitle());
-}
-Event::Event(int c, const char *t) 
-{
-  cout << ">>> Event : constructeur d'initialisation <<<" << endl;
-  setCode (c);
-  title = nullptr;
-  setTitle(t);
-}
-Event::~Event()
-{
-  cout << ">>> Event : destructeur <<<" << endl;
-  if (title) delete title;
-}
-void Event::setCode (int c)
-{
-  if( c < 1) return;
-  code = c;
-}
-void Event::setTitle (const char *t)
-{
-  if(t == nullptr) return;
-  if(title) delete title;
-  title = new char[strlen(t)+1];
-  strcpy (title, t);
-}
-int Event::getCode() const
-{
-  return code;
-}
-const char * Event::getTitle() const
-{
-  return title;
-}
-void Event::display() const
-{
-  cout << "Event("<< code <<") : "<<title<<endl;
-}
 
 int main()
 {

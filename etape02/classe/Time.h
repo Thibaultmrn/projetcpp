@@ -15,10 +15,11 @@ class Time
 		Time(const Time &t); //constr de copie
 		~Time(); //destructeur
 
-		int getHour() const;
-		int getMinute() const;
+		
 		void setHour(int h);
 		void setMinute(int m);
-		void display() const; 
+		int getHour() const;
+		int getMinute() const;
+		void display() const;
 };
 #endif
