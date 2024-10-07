@@ -1,5 +1,4 @@
 #include "Event.h"
-#include "Timing.h"
 Event::Event()
 {
   cout << ">>> Event : constructeur par defaut <<<" << endl;
@@ -73,7 +72,6 @@ Timing Event::getTiming() const
   {
       return *ptiming;
   }
-  return Timing();
 }
 void Event::display() const
 {

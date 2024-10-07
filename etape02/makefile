@@ -1,14 +1,22 @@
-Test2: Test2.o Time.o Timing.o Event.o
-	g++ Test2.o Time.o Timing.o Event.o -o Test2
 
-Test2.o: Test2.cpp classe/Time.h
-	g++ Test2.cpp -c
+CLASSE=./classe
+COMPIL=g++ -I $(CLASSE)
+OBJS=$(CLASSE)/Time.o $(CLASSE)/Timing.o $(CLASSE)/Event.o
+PROGRAMS=Test2
+Test2: Test2.cpp $(CLASSE)/Time.o $(CLASSE)/Timing.o $(CLASSE)/Event.o
+	$(COMPIL) Test2.cpp $(CLASSE)/Time.o $(CLASSE)/Timing.o $(CLASSE)/Event.o -o Test2
 
-Time.o: classe/Time.cpp classe/Time.h
-	g++ classe/Time.cpp -c 
+Time.o: $(CLASSE)/Time.cpp $(CLASSE)/Time.h
+	$(COMPIL) $(CLASSE)/Time.cpp -c -o $(CLASSE)/Time.o
 
-Timing.o: classe/Timing.cpp classe/Timing.h
-	g++ classe/Timing.cpp -c
+Timing.o: $(CLASSE)/Timing.cpp $(CLASSE)/Timing.h
+	$(COMPIL) $(CLASSE)/Timing.cpp -c -o $(CLASSE)/Timing.o
 
-Event.o: classe/Event.cpp classe/Event.h classe/Timing.h
-	g++ classe/Event.cpp -c
+Event.o: $(CLASSE)/Event.cpp $(CLASSE)/Event.h $(CLASSE)/Timing.h
+	$(COMPIL) $(CLASSE)/Event.cpp -c -o $(CLASSE)/Event.o
+
+
+clean:
+	rm -f $(OBJS) core
+clobber: clean
+	rm -f $(PROGRAMS)
