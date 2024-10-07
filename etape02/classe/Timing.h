@@ -4,26 +4,39 @@
 #include <string.h>
 using namespace std;
 #include "Time.h"
-class Timing
+
+namespace planning
 {
-	private:
-		string day;
-		Time start;
-		Time duration;
-	public:
-		Timing();
-		Timing(string d, Time s, Time du);
-		Timing(const Timing &t);
-		~Timing();
+	class Timing
+	{
+		private:
+			string day;
+			Time start;
+			Time duration;
+		public:
+			static const string MONDAY;
+			static const string TUESDAY;
+			static const string WEDNESDAY;
+			static const string THURSDAY;
+			static const string FRIDAY;
+			static const string SATERDAY;
+			static const string SUNDAY;
 
-		void setDay(string d);
-		void setStart(Time s);
-		void setDuration(Time du);
+			Timing();
+			Timing(string d, Time s, Time du);
+			Timing(const Timing &t);
+			~Timing();
 
-		string getDay() const;
-		Time getStart() const;
-		Time getDuration() const;
+			void setDay(string d);
+			void setStart(Time s);
+			void setDuration(Time du);
 
-		void display() const;
-};
+			string getDay() const;
+			Time getStart() const;
+			Time getDuration() const;
+
+			void display() const;
+	};	
+}
+
 #endif
