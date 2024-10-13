@@ -3,44 +3,34 @@ namespace planning
 {
   Event::Event()
   {
-    cout << ">>> Event : constructeur par defaut <<<" << endl;
+    //cout << ">>> Event : constructeur par defaut <<<" << endl;
     code = 1;
     title = nullptr;
     setTitle("---");
-    ptiming = nullptr;
+    timing = nullptr;
   }
   Event::Event(int c, const char *t) 
   {
-    cout << ">>> Event : constructeur de titre et de code<<<" << endl;
+    //cout << ">>> Event : constructeur de titre et de code<<<" << endl;
     setCode (c);
     title = nullptr;
     setTitle(t);
-    ptiming = nullptr;
-  }
-  Event::Event(int c, const char *t, Timing time) 
-  {
-    cout << ">>> Event : constructeur d'initialisation <<<" << endl;
-    setCode (c);
-    title = nullptr;
-    setTitle(t);
-    ptiming = nullptr;
-    setTiming(time);
+    timing = nullptr;
   }
   Event::Event(const Event &e)
   {
-    cout << ">>> Event : constructeur de copie <<<" << endl;
+    //cout << ">>> Event : constructeur de copie <<<" << endl;
     setCode (e.getCode());
     title = nullptr;
     setTitle(e.getTitle());
-    ptiming = nullptr;
+    timing = nullptr;
     setTiming(e.getTiming());
   }
-
   Event::~Event()
   {
-    cout << ">>> Event : destructeur <<<" << endl;
+    //cout << ">>> Event : destructeur <<<" << endl;
     if (title) delete title;
-    if (ptiming) delete ptiming;
+    if (timing) delete timing;
   }
   void Event::setCode (int c)
   {
@@ -54,10 +44,10 @@ namespace planning
     title = new char[strlen(t)+1];
     strcpy (title, t);
   }
-  void Event::setTiming(Timing time)
+  void Event::setTiming(const Timing& t)
   {
-    if(ptiming) delete ptiming;
-    ptiming = new Timing(time);
+    if (timing) delete timing;
+    timing = new Timing(t);
   }
   int Event::currentCode = 1;
   int Event::getCode() const
@@ -70,17 +60,14 @@ namespace planning
   }
   Timing Event::getTiming() const
   {
-    if (ptiming != nullptr)
-    {
-        return *ptiming;
-    }
+    return *timing;
   }
   void Event::display() const
   {
     cout << "Event("<< code <<") : "<<title <<endl;
-    if(ptiming)
+    if(timing)
     {
-       ptiming->display();
+       timing->display();
     }
   }
 }

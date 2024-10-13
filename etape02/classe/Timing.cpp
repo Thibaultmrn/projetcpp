@@ -3,38 +3,38 @@ namespace planning
 {
 	Timing::Timing()
 	{
-		cout << ">>> Timing : constructeur par défaut <<<" << endl;
-		setDay("---");
+		//cout << ">>> Timing : constructeur par défaut <<<" << endl;
+		setDay("Lundi");
 		start = 0;
 		duration = 0;
 	}
-	Timing::Timing(string d, Time s, Time du)
+	Timing::Timing(const string& d, const Time& s,const Time& du)
 	{
-		cout << ">>> Timing : constructeur d'initialisation <<<" << endl;
+		//cout << ">>> Timing : constructeur d'initialisation <<<" << endl;
 	 	setDay(d);
 	 	setStart(s);
 	 	setDuration(du);
 	}
 	Timing::Timing(const Timing &t)
 	{
-		cout << ">>> Timing : constructeur de copie <<<" << endl;
+		//cout << ">>> Timing : constructeur de copie <<<" << endl;
 	  	setDay(t.getDay());
 	 	setStart(t.getStart());
 	  	setDuration(t.getDuration());
 	}
 	Timing::~Timing()
 	{
-	  cout << ">>> Timing : destructeur <<<" << endl;
+	  //cout << ">>> Timing : destructeur <<<" << endl;
 	}
-	void Timing::setDay(string d)
+	void Timing::setDay(const string& d)
 	{
 		day = d;
 	}
-	void Timing::setStart(Time s)
+	void Timing::setStart(const Time& s)
 	{
 		start = s;
 	}
-	void Timing::setDuration(Time du)
+	void Timing::setDuration(const Time& du)
 	{
 		duration = du;
 	}
@@ -54,9 +54,11 @@ namespace planning
 
 	void Timing::display() const
 	{
-		cout << day << endl;
+		cout << "Timing :" << day << " a ";
 		start.display();
-		duration.display();
+		cout<<" (";
+		duration.display() ;
+		cout << ") ";
 	}
 	const string Timing::MONDAY = "Lundi";
 	const string Timing::TUESDAY = "Mardi";

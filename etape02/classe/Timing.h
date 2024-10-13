@@ -14,28 +14,23 @@ namespace planning
 			Time start;
 			Time duration;
 		public:
-			static const string MONDAY;
-			static const string TUESDAY;
-			static const string WEDNESDAY;
-			static const string THURSDAY;
-			static const string FRIDAY;
-			static const string SATERDAY;
-			static const string SUNDAY;
+			
 
 			Timing();
-			Timing(string d, Time s, Time du);
+			Timing(const string& d, const Time& s, const Time& du);
 			Timing(const Timing &t);
 			~Timing();
 
-			void setDay(string d);
-			void setStart(Time s);
-			void setDuration(Time du);
+			void setDay(const string& d);
+			void setStart(const Time& s);
+			void setDuration(const Time& du);
 
 			string getDay() const;
 			Time getStart() const;
 			Time getDuration() const;
 
 			void display() const;
+			static const string MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATERDAY, SUNDAY ;
 	};	
 }
 
