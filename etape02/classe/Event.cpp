@@ -1,9 +1,13 @@
 #include "Event.h"
+
 namespace planning
 {
+  int Event::currentCode = 1;
   Event::Event()
   {
-    //cout << ">>> Event : constructeur par defaut <<<" << endl;
+    #ifdef DEBUG
+    cout << ">>> Event : constructeur par defaut <<<" << endl;
+    #endif
     code = 1;
     title = nullptr;
     setTitle("---");
@@ -11,7 +15,9 @@ namespace planning
   }
   Event::Event(int c, const char *t) 
   {
-    //cout << ">>> Event : constructeur de titre et de code<<<" << endl;
+    #ifdef DEBUG
+    cout << ">>> Event : constructeur de titre et de code<<<" << endl;
+    #endif
     setCode (c);
     title = nullptr;
     setTitle(t);
@@ -19,7 +25,9 @@ namespace planning
   }
   Event::Event(const Event &e)
   {
-    //cout << ">>> Event : constructeur de copie <<<" << endl;
+    #ifdef DEBUG
+    cout << ">>> Event : constructeur de copie <<<" << endl;
+    #endif
     setCode (e.getCode());
     title = nullptr;
     setTitle(e.getTitle());
@@ -28,7 +36,9 @@ namespace planning
   }
   Event::~Event()
   {
-    //cout << ">>> Event : destructeur <<<" << endl;
+    #ifdef DEBUG
+    cout << ">>> Event : destructeur <<<" << endl;
+    #endif
     if (title) delete title;
     if (timing) delete timing;
   }
@@ -49,7 +59,7 @@ namespace planning
     if (timing) delete timing;
     timing = new Timing(t);
   }
-  int Event::currentCode = 1;
+  
   int Event::getCode() const
   {
     return code;
@@ -70,4 +80,5 @@ namespace planning
        timing->display();
     }
   }
+
 }

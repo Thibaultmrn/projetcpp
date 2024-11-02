@@ -3,28 +3,36 @@ namespace planning
 {
 	Timing::Timing()
 	{
-		//cout << ">>> Timing : constructeur par défaut <<<" << endl;
+		#ifdef DEBUG
+		cout << ">>> Timing : constructeur par défaut <<<" << endl;
+		#endif
 		setDay("Lundi");
-		start = 0;
-		duration = 0;
+		setStart(0);
+		setDuration(0);
 	}
 	Timing::Timing(const string& d, const Time& s,const Time& du)
 	{
-		//cout << ">>> Timing : constructeur d'initialisation <<<" << endl;
+		#ifdef DEBUG
+		cout << ">>> Timing : constructeur d'initialisation <<<" << endl;
+		#endif
 	 	setDay(d);
 	 	setStart(s);
 	 	setDuration(du);
 	}
 	Timing::Timing(const Timing &t)
 	{
-		//cout << ">>> Timing : constructeur de copie <<<" << endl;
+		#ifdef DEBUG
+		cout << ">>> Timing : constructeur de copie <<<" << endl;
+		#endif
 	  	setDay(t.getDay());
 	 	setStart(t.getStart());
 	  	setDuration(t.getDuration());
 	}
 	Timing::~Timing()
 	{
-	  //cout << ">>> Timing : destructeur <<<" << endl;
+	  #ifdef DEBUG
+	  cout << ">>> Timing : destructeur <<<" << endl;
+	  #endif
 	}
 	void Timing::setDay(const string& d)
 	{
@@ -32,11 +40,13 @@ namespace planning
 	}
 	void Timing::setStart(const Time& s)
 	{
-		start = s;
+		start.setHour(s.getHour());
+    	start.setMinute(s.getMinute());
 	}
 	void Timing::setDuration(const Time& du)
 	{
-		duration = du;
+		duration.setHour(du.getHour());
+    	duration.setMinute(du.getMinute());
 	}
 
 	string Timing::getDay() const

@@ -1,4 +1,4 @@
-//#include <stdlib.h>
+#include <stdlib.h>
 #include <iostream>
 using namespace std;
 #include "Time.h"
@@ -10,11 +10,11 @@ using namespace planning;
 int  Menu();
 void Essai1();
 void Essai2();
-//void Essai3();
-//void Essai4();
-//void Essai5();
-//void Essai6();
-//void Essai7();
+void Essai3();
+void Essai4();
+void Essai5();
+void Essai6();
+void Essai7();
 
 int main(int argc,char* argv[])
 {
@@ -29,11 +29,11 @@ int main(int argc,char* argv[])
     {
       case 1 : Essai1(); break;
       case 2 : Essai2(); break;
-      //case 3 : Essai3(); break;
-      //case 4 : Essai4(); break;
-      //case 5 : Essai5(); break;
-      //case 6 : Essai6(); break;
-     // case 7 : Essai7(); break;
+      case 3 : Essai3(); break;
+      case 4 : Essai4(); break;
+      case 5 : Essai5(); break;
+      case 6 : Essai6(); break;
+      case 7 : Essai7(); break;
       default : fini = true ; break;
     }
   }
@@ -134,7 +134,7 @@ void Essai2()
     h.display();
     cout << endl;
   }
-  /*
+
   cout << endl << "********************************************************************" << endl;
   cout <<         "(3) ***** Test de l'operateur (Time + Time) ************************" << endl;
   cout <<         "********************************************************************" << endl;
@@ -153,13 +153,13 @@ void Essai2()
     cout << "end : ";
     end.display();
     cout << endl;
-  }*/
+  }
 }
 
 /*******************************************************************************************************/
 /*** Tests de l'operateur - de la classe Time **********************************************************/
 /*******************************************************************************************************/
-/*
+
 void Essai3()
 {
   cout << endl << "********************************************************************" << endl;
@@ -216,11 +216,10 @@ void Essai3()
     cout << endl;
   }
 }
-*/
 /*******************************************************************************************************/
 /*** Test des operateurs < > == de la classe Time ******************************************************/
 /*******************************************************************************************************/
-/*
+
 void Essai4()
 {
   cout << "**********************************************************************" << endl;
@@ -241,11 +240,11 @@ void Essai4()
   if (h1 == h2) cout << "h1 == h2" << endl;
   cout << endl;
 }
-*/
+
 /*******************************************************************************************************/
 /*** Test des operateurs << et >> de la classe Time ****************************************************/
 /*******************************************************************************************************/
-/*
+
 void Essai5()
 {
   cout << "**********************************************************************" << endl;
@@ -257,11 +256,11 @@ void Essai5()
   cout << endl << "Voici l'heure que vous avez encodee : " << h << endl;
   cout << endl;
 }
-*/
+
 /*******************************************************************************************************/
 /*** Tests des operateurs de pre/post in(de)crementation de la classe Time *****************************/
 /*******************************************************************************************************/
-/*
+
 void Essai6()
 {
   cout << "**********************************************************************" << endl;
@@ -296,11 +295,11 @@ void Essai6()
   cout << "h4-- : " << h4-- << endl;  // Si tout va bien, h4 est decremente apres avoir ete affiche !
   cout << "h4   : " << h4 << endl << endl;
 }
-*/
+
 /*******************************************************************************************************/
 /*** Test des operateurs < > == de la classe Timing ****************************************************/
 /*******************************************************************************************************/
-/*void Essai7()
+void Essai7()
 {
   cout << "**********************************************************************" << endl;
   cout << "********* Test des operateurs < > == de la classe Timing *************" << endl;
@@ -346,4 +345,3 @@ void Essai6()
   if (h4 == ref) cout << "h4 == ref" << endl;
   cout << endl;
 }
-*/
